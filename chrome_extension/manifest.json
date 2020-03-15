@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+
+    "name": "QQ空间清理助手",
+    "description": "提供空间留言/说说删除功能",
+    "version": "1.0",
+
+    "browser_action":
+    {
+        "default_icon": "qq_icon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"]
+    }]
+}
