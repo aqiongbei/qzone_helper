@@ -1,0 +1,2 @@
+# get_sf_followed_user_info
+获取segmentfault关注列表中的用户信息，并分析出僵尸用户
