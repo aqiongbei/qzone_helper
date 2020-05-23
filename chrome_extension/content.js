@@ -453,6 +453,10 @@ function dispatch (opt) {
 }
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
     console.log('content.js recive msg:', message, sender);
-    dispatch(message);
     sendResponse({is_recive: true, orion: 'content.js'});
+    try {
+        dispatch(message);
+    } catch (e) {
+        console.log(e);
+    }
 })
