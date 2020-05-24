@@ -104,7 +104,7 @@ window.TASK.comment = {
                         start: window.comment_list.length
                     }
                 }
-                utils.next( (opt, foo) => {
+                utils.next(() => {
                     this.getComment(opt, foo);
                 })
             }

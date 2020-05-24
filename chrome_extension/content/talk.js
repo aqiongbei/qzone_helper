@@ -93,7 +93,7 @@ window.TASK.talk = {
                         pos: window.talk_list.length
                     }
                 }
-                utils.next((opt, foo) => {
+                utils.next(() => {
                     this.getTalk(opt, foo);
                 })
             }
