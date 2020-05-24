@@ -20,12 +20,15 @@
         }
         main button {
             width: 110px;
+            border-radius: 2px;
+            border: 1px solid #808695;
         }
         main button:nth-child(even) {
             margin-left: 19px;
         }
-        main button:nth-last-child(1) {
+        main .long {
             width: 100%;
+            margin-left: 0 !important;
         }
         footer {
             padding-top: 10px;
@@ -35,23 +38,29 @@
 <body>
     <h3>QQ空间助手</h3>
     <main id="content">
-        <button data-type="export_talk" title="导出.json格式的说说,包含评论">导出说说</button>
-        <button data-type="delete_talk">删除说说</button>
+        <button data-action="export_talk" title="导出.json格式的说说,包含评论">导出说说</button>
+        <button data-action="delete_talk">删除说说</button>
         <br>
         <br>
-        <button data-type="export_comment" title="导出.json格式的留言,包含评论">导出留言</button>
-        <button data-type="delete_comment">删除留言</button>
+        <button data-action="export_comment" title="导出.json格式的留言,包含评论">导出留言</button>
+        <button data-action="delete_comment">删除留言</button>
         <br>
         <br>
-        <button data-type="export_blog" disabled="true" title="导出.json格式的日志,包含评论">导出日志</button>
-        <button data-type="delete_blog" disabled="true">删除日志</button>
+        <button data-action="export_blog" disabled="true" title="导出.json格式的日志,包含评论">导出日志</button>
+        <button data-action="delete_blog" disabled="true">删除日志</button>
         <br>
         <br>
-        <button data-type="export_photo" disabled="true" title="导出图片链接的.json格式的文件,不包含评论.可借助一些下载器下载链对应的图片">导出相册</button>
-        <button data-type="delete_photo" disabled="true">删除相册</button>
+        <button data-action="export_photo" disabled="true" title="导出图片链接的.json格式的文件,不包含评论.&#10;可借助一些下载器下载链对应的图片">导出相册</button>
+        <button data-action="delete_photo" disabled="true">删除相册</button>
         <br>
         <br>
-        <button data-type="delete_all" disabled="true">一键清空说说+留言+日志+相册</button>
+        <button data-action="export_all" class="long" disabled="true" title="就是字面意思">一键导出说说+留言+日志+相册</button>
+        <br>
+        <br>
+        <button data-action="delete_all" class="long" disabled="true" title="就是字面意思">一键清空说说+留言+日志+相册</button>
+        <br>
+        <br>
+        <button data-action="stop_all" class="long" title="字面意思,不解释">终止任务</button>
     </main>
     <footer>
         version: 1.0.1

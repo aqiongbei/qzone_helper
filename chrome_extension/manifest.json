@@ -11,11 +11,10 @@
     },
     "icons": {
         "16": "qq_icon.png",
-        "128": "qq_icon.png",
-        "48": "qq_icon.png"
+        "48": "qq_icon.png",
+        "128": "qq_icon.png"
     },
-    "browser_action":
-    {
+    "browser_action": {
         "default_icon": "qq_icon.png",
         "default_popup": "popup.html"
     },
@@ -24,8 +23,14 @@
         "storage"
     ],
     "content_scripts": [
-    {
-        "matches": ["http://*/*", "https://*/*"],
-        "js": ["content.js"]
-    }]
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": [
+                "./content/index.js",
+                "./content/utils.js",
+                "./content/talk.js",
+                "./content/comment.js"
+            ]
+        }
+    ]
 }
