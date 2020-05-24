@@ -1,8 +1,7 @@
 {
     "manifest_version": 2,
-
-    "name": "QQ空间清理助手",
-    "description": "提供空间留言/说说删除功能",
+    "name": "QQ空间助手",
+    "description": "提供QQ空间批量删除,导出留言/说说/日志/相册功能",
     "version": "1.0",
     "background": {
         "scripts": [
