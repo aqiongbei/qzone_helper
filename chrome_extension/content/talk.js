@@ -105,7 +105,9 @@ window.TASK.talk = {
             console.log('cb', res)
             if (res.total) {
                 window.talk_list = res.msglist;
-                utils.next(this.deleteTalk);
+                utils.next( () => {
+                    this.deleteTalk();
+                });
             } else {
                 utils.showTips('删除说说完成!', 'succeed');
             }

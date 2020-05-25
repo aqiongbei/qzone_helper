@@ -81,7 +81,9 @@ window.TASK.comment = {
         let foo = res => {
             if (res.data && res.data.total) {
                 window.comment_list = res.data.commentList;
-                utils.next(this.deleteComment);
+                utils.next( () => {
+                    this.deleteComment();
+                });
             } else {
                 utils.showTips('删除留言完成!', 'succeed');
             }
