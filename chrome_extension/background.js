@@ -1,3 +1,22 @@
+// chrome.runtime.onInstalled.addListener(function () {
+//     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+//         chrome.declarativeContent.onPageChanged.addRules([
+//             {
+//                 conditions: [
+//                     // 打开QQ空间显示pageAction
+//                     new chrome.declarativeContent.PageStateMatcher({
+//                         pageUrl: {
+//                             hostEquals: 'qq.com',
+//                             schemes: ['https']
+//                         }
+//                     })
+//                 ],
+//                 actions: [new chrome.declarativeContent.ShowPageAction()]
+//             }
+//         ]);
+//     });
+// });
+
 console.log('load background.js');
 // 获取当前选项卡ID
 function getCurrentTabId(callback) {
