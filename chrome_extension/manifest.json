@@ -16,7 +16,8 @@
     },
     "browser_action": {
         "default_icon": "qq_icon.png",
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_title": "我就是QQ空间小助手呀"
     },
     "permissions": [
         "activeTab",

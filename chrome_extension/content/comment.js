@@ -13,7 +13,7 @@ window.TASK.comment = {
                 sort: 0,
                 s: 0.7434565759252794,
                 format: 'json',
-                num: 20,
+                num: 10,
                 start: 0,
                 inCharset: 'utf-8',
                 outCharset: 'utf-8',
@@ -34,39 +34,40 @@ window.TASK.comment = {
         });
     },
     deleteComment () {
-        let list = window.comment_list.splice(0, 1);
-        list.map(comment => {
-            if (!comment.id) return;
-            utils.request({
-                url: 'https://h5.qzone.qq.com/proxy/domain/m.qzone.qq.com/cgi-bin/new/del_msgb',
-                method: 'POST',
-                qs: {
-                    qzonetoken: base_info.token,
-                    g_tk: base_info.g_tk,
-                },
-                data: {
-                    hostUin: base_info.uin,
-                    idList: comment.id,
-                    uinList: base_info.uin,
-                    format: 'fs',
-                    iNotice: 1,
-                    inCharset: 'utf-8',
-                    outCharset: 'utf-8',
-                    ref: 'qzone',
-                    json: 1,
-                    g_tk: base_info.g_tk,
-                    qzreferrer: 'https://user.qzone.qq.com/proxy/domain/qzs.qq.com/qzone/msgboard/msgbcanvas.html#page=1'
-                }
-            }, function (res) {
-                if (res.includes('成功删除')) {
-                    utils.showTips(`删除留言${comment.id}成功!`);
-                } else {
-                    // 删除失败的再回收一下
-                    window.comment_list.push(comment);
-                    utils.showTips(`删除留言${comment.id}失败:\n${res}!`);
-                }
-            });
+        let uin_list = [];
+        let id_list = [];
+        window.comment_list.map(comment => {
+            uin_list.push(base_info.uin);
+            id_list.push(comment.id);
         })
+        utils.request({
+            url: 'https://h5.qzone.qq.com/proxy/domain/m.qzone.qq.com/cgi-bin/new/del_msgb',
+            method: 'POST',
+            qs: {
+                qzonetoken: base_info.token,
+                g_tk: base_info.g_tk,
+            },
+            data: {
+                hostUin: base_info.uin,
+                idList: id_list.join(),
+                uinList: uin_list.join(),
+                format: 'fs',
+                iNotice: 1,
+                inCharset: 'utf-8',
+                outCharset: 'utf-8',
+                ref: 'qzone',
+                json: 1,
+                g_tk: base_info.g_tk,
+                qzreferrer: 'https://user.qzone.qq.com/proxy/domain/qzs.qq.com/qzone/msgboard/msgbcanvas.html#page=1'
+            }
+        }, function (res) {
+            if (res.includes('成功删除')) {
+                utils.showTips(`删除留言${uin_list.length}成功!`);
+                window.comment_list = [];
+            } else {
+                utils.showTips(`删除留言${uin_list.length}失败:\n${res}!`);
+            }
+        });
         utils.next( () => {
             setTimeout( () => {
                 if (window.comment_list && window.comment_list.length) {
@@ -74,7 +75,7 @@ window.TASK.comment = {
                 } else {
                     this.delete();
                 }
-            }, 5000);
+            }, 6000);
         })
     },
     delete () {
