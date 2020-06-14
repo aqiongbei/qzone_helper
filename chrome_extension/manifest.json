@@ -10,22 +10,20 @@
         "persistent": false
     },
     "icons": {
-        "16": "qq_icon.png",
         "48": "qq_icon.png",
         "128": "qq_icon.png"
     },
-    "browser_action": {
+    "page_action": {
         "default_icon": "qq_icon.png",
         "default_popup": "popup.html",
         "default_title": "我就是QQ空间小助手呀"
     },
     "permissions": [
-        "activeTab",
         "declarativeContent"
     ],
     "content_scripts": [
         {
-            "matches": ["http://*/*", "https://*/*"],
+            "matches": ["http://*.qq.com/*"],
             "js": [
                 "./content/index.js",
                 "./content/utils.js",
