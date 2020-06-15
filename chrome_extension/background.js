@@ -20,7 +20,7 @@ function getCurrentTabId(callback) {
     });
 }
 
-function msg2Content(message, callback) {
+function popup2Content(message, callback) {
     getCurrentTabId((tab_id) => {
         chrome.tabs.sendMessage(tab_id, message, function(response) {
             console.log('background.js recive response:', response)
@@ -34,5 +34,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 })
 
 function notice(opt) {
-    msg2Content(opt);
+    popup2Content(opt);
 }
