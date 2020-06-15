@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "QQ空间助手",
+    "name": "QQ空间小助手",
     "description": "提供QQ空间批量删除,导出留言/说说/日志/相册功能",
     "version": "1.0",
     "background": {
@@ -19,11 +19,13 @@
         "default_title": "我就是QQ空间小助手呀"
     },
     "permissions": [
+        "tabs",
+        "activeTab",
         "declarativeContent"
     ],
     "content_scripts": [
         {
-            "matches": ["http://*.qq.com/*"],
+            "matches": ["http://*.qzone.qq.com/*"],
             "js": [
                 "./content/index.js",
                 "./content/utils.js",
