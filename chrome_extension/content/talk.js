@@ -58,6 +58,10 @@ window.TASK.talk = {
             }, function (res) {
                 if (res.includes('"code":0')) {
                     utils.showTips(`删除说说${msg.tid}成功!`)
+                } else if(res.includes('"code":-3001')){
+                    utils.showTips(`删除说说失败!操作频繁需要验证.任务已暂停,请稍后重试!`, 'fail');
+                    window.stop_task = true;
+                    window.talk_list = [];
                 } else if (res.includes('请先登录空间')) {
                     utils.showTips(`删除说说失败!操作异常被锁定.任务已暂停,请稍后重试!`, 'fail');
                     window.stop_task = true;
