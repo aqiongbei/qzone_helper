@@ -37,7 +37,7 @@ window.TASK.talk = {
         });
     },
     deleteTalk () {
-        let list = window.talk_list.splice(0, 3);
+        let list = window.talk_list.splice(0, 1);
         list.map(msg => {
             if (!msg.tid) return;
             utils.request({
