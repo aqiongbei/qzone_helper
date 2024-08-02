@@ -1,19 +1,16 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
+    "version": "1.2",
     "name": "QQ空间小助手",
-    "description": "提供QQ空间批量删除,导出留言/说说/日志/相册功能",
-    "version": "1.0",
-    "background": {
-        "scripts": [
-            "./background.js"
-        ],
-        "persistent": false
-    },
+    "description": "提供QQ空间批量删除留言/说说功能",
     "icons": {
         "48": "qq_icon.png",
         "128": "qq_icon.png"
     },
-    "page_action": {
+    "background": {
+        "service_worker": "./background.js"
+    },
+    "action": {
         "default_icon": "qq_icon.png",
         "default_popup": "popup.html",
         "default_title": "我就是QQ空间小助手呀"
@@ -25,7 +22,7 @@
     ],
     "content_scripts": [
         {
-            "matches": ["http://*.qzone.qq.com/*", "https://*.qzone.qq.com/*"],
+            "matches": ["*://*.qzone.qq.com/*"],
             "js": [
                 "./content/index.js",
                 "./content/utils.js",

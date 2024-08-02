@@ -5,6 +5,9 @@ document.querySelector('#content').addEventListener('click', e => {
         let action = target.getAttribute('data-action');
         console.log(target, action)
         if (action) {
+            if (['delete_talk', 'delete_comment'].includes(action)) {
+                target.disabled = true;
+            }
             notice({type: action});
         }
     }
