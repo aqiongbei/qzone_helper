@@ -23,6 +23,9 @@ function getActiveTab(callback) {
     chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
         let tab = tabs[0];
         if (tab) {
+            if (!tab.url.includes('user.qzone.qq.com')) {
+                return alert('请在QQ空间页面使用本插件!');
+            }
             callback(tab.id);
         } else {
             chrome.tabs.get(activeTabId, function (tab) {
