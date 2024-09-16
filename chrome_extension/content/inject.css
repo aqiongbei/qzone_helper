@@ -1,0 +1,50 @@
+#qzone_helper-wrapper {
+    position: absolute;
+    z-index: 50;
+    top: 50px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #e5e5e5;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#qzone_helper-wrapper .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#qzone_helper-closeBtn {
+    color: blue;
+    cursor: pointer;
+}
+
+#qzone_helper-wrapper button {
+    height: 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    width: calc(50% - 12px);
+    border: 1px solid #808695;
+}
+
+#qzone_helper-wrapper button:nth-child(even) {
+    margin-left: 18px;
+}
+
+#qzone_helper-wrapper .warn {
+    background-color: #ffccc7;
+}
+
+#qzone_helper-wrapper button:disabled {
+    cursor: not-allowed;
+}
+
+#qzone_helper-wrapper .long {
+    width: 100%;
+    margin-left: 0 !important;
+}
+
+#qzone_helper-wrapper hr {
+    margin: 6px 0;
+}
