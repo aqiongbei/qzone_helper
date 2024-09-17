@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "version": "1.3",
+    "name": "QQ空间小助手",
+    "author": "aqiongbei",
+    "description": "提供QQ空间批量删除留言/说说功能",
+    "homepage_url": "https://github.com/aqiongbei/qzone_helper",
+    "icons": {
+        "48": "qq_icon.png",
+        "128": "qq_icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://user.qzone.qq.com/*"],
+            "js": ["./content/inject.js"],
+            "css": ["./content/inject.css"],
+            "world": "ISOLATED"
+        }
+    ]
+}

@@ -1,5 +1,9 @@
 console.log("content_scripts loaded");
 
+import "./comment";
+import "./talk";
+import "./utils";
+
 function injectUI() {
   let { name, author, version, homepage_url } = chrome.runtime.getManifest();
   let wrapperEl = document.createElement("div");

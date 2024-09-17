@@ -163,6 +163,7 @@ window.utils = {
   next(cb) {
     if (window.stop_task) {
       this.showTips(`任务已经终止!`);
+      window.location.reload();
     } else {
       cb();
     }

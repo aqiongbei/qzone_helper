@@ -12,12 +12,7 @@
     "content_scripts": [
         {
             "matches": ["*://user.qzone.qq.com/*"],
-            "js": [
-                "./content/index.js",
-                "./content/utils.js",
-                "./content/talk.js",
-                "./content/comment.js"
-            ],
+            "js": ["./content/inject.js"],
             "css": ["./content/inject.css"],
             "world": "ISOLATED"
         }
