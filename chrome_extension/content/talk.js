@@ -90,7 +90,7 @@ window.TASK.talk = {
         } else {
           this.delete();
         }
-      }, 5000);
+      }, 500);
     });
   },
   export() {

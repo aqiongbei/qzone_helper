@@ -29,10 +29,10 @@ window.TASK.comment = {
       config.data = Object.assign(config.data, opt.data);
     }
     utils.request(config, function (res) {
+      cb && cb(res);
       utils.showTips(
         `获取留言列表成功! 当前进度: ${window.comment_list.length} / ${res.data.total}`
       );
-      cb && cb(res);
     });
   },
   deleteComment() {
@@ -81,7 +81,7 @@ window.TASK.comment = {
         } else {
           this.delete();
         }
-      }, 6000);
+      }, 1000);
     });
   },
   delete() {

@@ -5,31 +5,23 @@ function injectUI() {
   let wrapperEl = document.createElement("div");
   wrapperEl.setAttribute("id", "qzone_helper-wrapper");
   wrapperEl.innerHTML = `
-    <div class="top">
-      <h3>${name}</h3>
-      <span id="qzone_helper-closeBtn">关闭</span>
-    </div>
+    <div class="top"><h3>${name}</h3><span id="qzone_helper-closeBtn">关闭</span></div>
     <hr/>
     <button data-action="export_talk" title="将说说的请求数据导出为json格式的文本,包含评论">
-        导出说说
-      </button>
-      <button data-action="delete_talk" class="warn">删除说说</button>
-      <br />
-      <br />
-      <button data-action="export_comment" title="将留言的请求数据导出为json格式的文本,包含评论">
-        导出留言
-      </button>
-      <button data-action="delete_comment" class="warn">删除留言</button>
-      <br />
-      <br />
-      <button data-action="stop_all" class="long">
-        终止任务
-      </button>
-      <hr/>
-      <footer>
-      version: ${version} author: ${author} <a href=${homepage_url}>Github</a>
-    </footer>
-    </main>
+      导出说说
+    </button>
+    <button data-action="delete_talk" class="warn">删除说说</button>
+    <br />
+    <br />
+    <button data-action="export_comment" title="将留言的请求数据导出为json格式的文本,包含评论">
+      导出留言
+    </button>
+    <button data-action="delete_comment" class="warn">删除留言</button>
+    <br />
+    <br />
+    <button data-action="stop_all" class="long">终止任务</button>
+    <hr/>
+    <footer>version: ${version} author: ${author} <a href=${homepage_url}>Github</a></footer>
     `;
   document.body.appendChild(wrapperEl);
 
