@@ -21,7 +21,10 @@
 该脚本仅供学习、交流使用，任何个人、组织和单位不得用于牟利以及非法活动。
 
 ## 使用方法
+### 在线安装
+[点击跳转Chrome应用商店](https://chromewebstore.google.com/detail/mkhimggaddbefdnnepibldfgfghnfgbd?utm_source=item-share-cb)（需要梯子）,直接安装使用
 
+### 压缩包安装
 打开浏览器`chrome://extensions/`页面,点击左上角**加载已解压拓展程序**按钮,导入本项目`chrome_extension/dist`下的文件.
 
 > _注意: 右上角开发者模式打开之后才会显示**加载已解压拓展程序**按钮_.
